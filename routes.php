@@ -2,7 +2,7 @@
 
 $controllers = [
     'pages' => ['home', 'error'],
-    'account' => ['signin', 'signup']
+    'account' => ['signin', 'signup', 'register', 'login', 'logout']
 ];
 
 if (!array_key_exists($controller, $controllers) || !in_array($action, $controllers[$controller])) {
