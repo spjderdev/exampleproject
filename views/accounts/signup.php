@@ -6,7 +6,7 @@
         <div class="flex flex-col justify-center mt-[150px]">
             <div class="text-4xl text-black">
                 <div class="uppercase">Sign up</div>      
-                <form method="POST" action="/project/index.php?controller=account&action=register">
+                <form method="POST" action="index.php?controller=account&action=register">
                     <div class="pt-10 pr-20">                        
                         <label class="text-sm font-poppins font-bold">
                             Email
