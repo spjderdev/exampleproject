@@ -13,6 +13,7 @@ module.exports = {
       fontFamily: {
         custom: ["ValorantFont", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        big: ["TungstenFont", "san-serif"],
       },
     },
   },
