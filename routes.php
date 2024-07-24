@@ -1,7 +1,8 @@
 <?php 
 
 $controllers = [
-    'pages' => ['home', 'error', 'signin']
+    'pages' => ['home', 'error'],
+    'account' => ['signin', 'signup']
 ];
 
 if (!array_key_exists($controller, $controllers) || !in_array($action, $controllers[$controller])) {
