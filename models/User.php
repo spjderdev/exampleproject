@@ -16,7 +16,7 @@ class User {
         $db = Database::getInstance();
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         
-        $query = 'INSERT INTO users (email, username, password) VALUES (:email, :username, :password)';
+        $query = 'INSERT INTO users (email, username, password) VALUES (:email, :username, :password, "user")';
         $req = $db->prepare($query);
 
         $req->bindParam(':email', $email);
@@ -33,7 +33,7 @@ class User {
 
     function LoginCheck($username, $password) {
         $db = Database::getInstance();
-        $query = 'SELECT id, username, password FROM users where username = :username';
+        $query = 'SELECT id, username, password, role FROM users where username = :username';
         $req = $db -> prepare($query);
         $req -> bindParam(':username', $username);
         $req -> execute();
