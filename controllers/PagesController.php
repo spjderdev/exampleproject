@@ -17,9 +17,6 @@ class PagesController extends BaseController {
         $this -> render('home', $data);
     }
 
-    public function signin() {
-        $this -> render('signin');
-    }
 
     public function error() {
         $this -> render('error');
