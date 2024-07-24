@@ -28,9 +28,18 @@ class AccountController extends BaseController {
                 if($ok) {
                     $_SESSION['user_id'] = $ok['id'];
                     $_SESSION['username'] = $ok['username'];
-                    echo '<script>alert("Login successfully, now you will be redirect to Home")
-                    window.location.href = "index.php?controller=pages&action=home";
-                    </script>';
+                    $_SESSION['role'] = $ok['role'];
+
+                    if($ok['role'] == 'admin') {
+                        echo '<script>alert("Admin login successfully, press ok")
+                        window.location.href = "index.php?controller=dashboard&action=home";
+                        </script>';
+                    }
+                    else {
+                        echo '<script>alert("Login successfully, redirecting to home")
+                        window.location.href = "index.php?controller=pages&action=home";
+                        </script>';
+                    }
                 }
                 else {
                     echo '<script>alert("Invalid")</script>';
