@@ -1,5 +1,5 @@
 <!-- component -->
-<header class="header sticky top-0 bg-customBlack flex items-center justify-between px-8 py-02 shadow-2xl">
+<header class="header sticky z-10 top-0 bg-customBlack flex items-center justify-between px-8 py-02 shadow-2xl">
     <!-- logo -->
     <h1 class="w-1/6 flex items-center justify-between">
         <a href="">
