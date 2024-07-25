@@ -16,7 +16,7 @@ class User {
         $db = Database::getInstance();
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         
-        $query = 'INSERT INTO users (email, username, password) VALUES (:email, :username, :password, "user")';
+        $query = 'INSERT INTO users (email, username, password, role) VALUES (:email, :username, :password, "user")';
         $req = $db->prepare($query);
 
         $req->bindParam(':email', $email);
