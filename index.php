@@ -2,19 +2,7 @@
 
 require_once 'includes/config.php';
 
-if(isset($_GET['controller'])) {
-    $controller = $_GET['controller'];
-
-    if(isset($_GET['action'])) {
-        $action = $_GET['action'];
-    }
-    else {
-        $action = 'index';
-    }
-}
-else {
-    $controller = 'pages';
-    $action = 'home';
-}
+$controller = isset($_GET['controller']) ? $_GET['controller'] : 'pages';
+$action = isset($_GET['action']) ? $_GET['action'] : 'home';
 
 require_once('routes.php');
