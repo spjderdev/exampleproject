@@ -61,4 +61,28 @@ class Category {
             echo 'Something went wrong: ' . $e -> getMessage();
         }
     }
+
+    static function addCategory($name) {
+        $db = Database::getInstance();
+        try {
+            $query = "INSERT INTO categories(name) VALUES (:name)";
+            $req = $db -> prepare($query);
+            $req -> bindParam(':name', $name);
+            return $req -> execute();
+        } catch (PDOException $e) {
+            echo 'Something went wrong' . $e -> getMessage();
+        }
+    }
+
+    static function deleteCategory($id) {
+        $db = Database::getInstance();
+        try {
+            $query = "DELETE FROM categories WHERE id = :id";
+            $req = $db -> prepare($query);
+            $req -> bindParam(':id', $id);
+            return $req -> execute();
+        } catch (PDOException $e) {
+            echo 'Something went wrong' . $e -> getMessage();
+        }
+    }
 }
