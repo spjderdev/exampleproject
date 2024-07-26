@@ -3,8 +3,9 @@
 class BaseController {
     protected $folder;
 
-    public function render($file, $data = []) {
-        $exists_file = 'views/' . $this->folder . '/' . $file . '.php';
+    public function render($file, $data = [], $subFolder = '') {
+        $subFolderPath = $subFolder ? $subFolder . '/' : '';
+        $exists_file = 'views/' . $this->folder . '/' . $subFolderPath . $file . '.php';
 
         if(is_file($exists_file)) {
             extract($data);
