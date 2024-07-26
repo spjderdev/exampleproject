@@ -53,4 +53,35 @@ class CategoryController extends BaseController {
             }
         }
     }
+
+    function add() {
+        $this -> render('add',[],'Category');
+        if(isset($_POST['add'])) {
+            $name = $_POST['name'];
+
+            $categories = Category::addCategory($name);
+
+            if($categories) {
+                echo '<script>alert("Create success");
+                window.location.href = "index.php?controller=category&action=list";
+                </script>';
+            }
+            else {
+                echo 'Failed';
+            }
+        }
+    }
+
+    function delete($id) {
+        $categories = Category::deleteCategory($id);
+        if($categories) {
+            echo '<script>alert("Delete success");
+            window.location.href = "index.php?controller=category&action=list";
+            </script>
+            ';
+        } 
+        else {
+            echo 'Failed';
+        }
+    }
 }
