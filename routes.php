@@ -13,6 +13,7 @@ if (!array_key_exists($controller, $controllers) || !in_array($action, $controll
     $action = 'error';
 }
 
+
 $folders = ['admin', 'user', ''];
 
 $class = ucfirst($controller) . 'Controller';
@@ -22,6 +23,13 @@ foreach($folders as $folder) {
         include_once $path;
         if(class_exists($class)) {
             $controller = new $class;
+            if ($folder === 'admin') {
+                session_start();
+                if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+                    header('Location: index.php?controller=pages&action=error');
+                    exit();
+                }
+            }
             if(method_exists($controller, $action)) {
                 if(($action === 'edit' || $action === 'delete') && $id !== null) {
                     $controller -> $action($id);
