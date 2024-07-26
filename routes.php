@@ -4,7 +4,7 @@ $controllers = [
     'pages' => ['home', 'error'],
     'account' => ['signin', 'signup', 'register', 'login', 'logout'],
     'dashboard' => ['home', 'add'],
-    'category' => ['list', 'edit']
+    'category' => ['list', 'edit', 'add']
 ];
 
 $id = isset($_GET['id']) ? $_GET['id'] : null;
