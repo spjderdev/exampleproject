@@ -17,9 +17,14 @@
         <?php 
           session_start();
           $isLogged = isset($_SESSION['user_id']);
+          $isAdmin = false;
+          if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
+            $isAdmin = true;
+          }
+
         ?>
         
-        <?php if($isLogged): ?>
+        <?php if($isLogged && !$isAdmin) : ?>
           <a href="index.php?controller=account&action=logout" class="bg-redCustom uppercase text-white h-8 p-4 flex items-center justify-center ml-1  duration-200 font-bold">
           Log out
         <?php endif; ?>
@@ -27,6 +32,10 @@
         <?php if(!$isLogged): ?>
           <a href="index.php?controller=account&action=signin" class="bg-redCustom uppercase text-white h-8 p-4 flex items-center justify-center ml-1  duration-200 font-bold">
           Sign in
+        <?php endif; ?>
+
+        <?php if($isAdmin): ?>
+          <a href="index.php?controller=dashboard&action=home" class="bg-redCustom uppercase text-white h-8 p-4 flex items-center justify-center ml-1  duration-200 font-bold">Go to dashboard</a>
         <?php endif; ?>
     </a>
 
