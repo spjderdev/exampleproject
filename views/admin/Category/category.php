@@ -33,7 +33,7 @@
                         <span class="text-white text-xl"><?= $productCount ?></span>
                         <div class="flex space-x-4">
                             <a href="index.php?controller=category&action=edit&id=<?= $category->id?>" class="text-green-400 hover:underline text-lg">Edit</a>
-                            <a href="#" class="text-red-400 hover:underline text-lg">Delete</a>
+                            <a href="index.php?controller=category&action=delete&id=<?= $category->id ?>" onClick="return confirm('Are you sure?')" class="text-red-400 hover:underline text-lg">Delete</a>
                         </div>
                     </div>
                     <?php endforeach;?>
