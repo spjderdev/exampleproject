@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="./public/assets/css/styles.css">
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <title>Document</title>
+    <title>Valorant Store</title>
 </head>
-<body>
+<body class="bg-backgroundColor">
     <?= @$content ?>
 </body>
 </html>
