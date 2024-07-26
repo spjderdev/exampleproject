@@ -8,6 +8,11 @@
   src: url("../fonts/ValorantFont.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "TungstenFont";
+  src: url("../fonts/Tungsten-Bold.ttf") format("truetype");
+}
+
 * {
   font-family: "Poppins", sans-serif;
 }
