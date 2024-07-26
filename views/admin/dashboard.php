@@ -5,4 +5,17 @@ if($_SESSION['role'] !== 'admin') {
     header('Location: index.php?controller=pages&action=error');
     exit();
 }
-echo '<a href="index.php?controller=dashboard&action=add" class="underline font-bold">Add new topics</a>';
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+  
+    <?php include './components/sidebar.php'; ?>
+</body>
+</html>
