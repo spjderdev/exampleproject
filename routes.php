@@ -4,7 +4,7 @@ $controllers = [
     'pages' => ['home', 'error'],
     'account' => ['signin', 'signup', 'register', 'login', 'logout'],
     'dashboard' => ['home', 'add'],
-    'category' => ['list', 'edit', 'add']
+    'category' => ['list', 'edit', 'add', 'delete']
 ];
 
 $id = isset($_GET['id']) ? $_GET['id'] : null;
@@ -20,7 +20,7 @@ $class = ucfirst($controller) . 'Controller';
 if(class_exists($class)) {
     $controller = new $class;
     if(method_exists($controller, $action)) {
-        if($action === 'edit' &&  $id !== null) {
+        if(($action === 'edit' || $action === 'delete') && $id !== null) {
             $controller -> $action($id);
         }
         else {
