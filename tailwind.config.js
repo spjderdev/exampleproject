@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         customBlack: "#060506",
         redCustom: "#ff4654",
+        backgroundColor: "#101823",
       },
       width: {
         defaultLogo: "5rem",
