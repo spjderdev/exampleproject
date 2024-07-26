@@ -12,7 +12,7 @@ class DashboardController extends BaseController {
     }
 
     function add() {
-        $this -> render('add');
+        $this -> render('add',[],'Post');
 
         if(isset($_POST['add'])) {
             $title = $_POST['title'];
