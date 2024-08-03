@@ -29,7 +29,9 @@ class PostController extends BaseController {
             $category_id = $_POST['category_id'];
             $images = $_FILES['images']['name'];
             move_uploaded_file($_FILES['images']['tmp_name'], './public/images/' . $images);
-            $ok = Product::addProduct($title, $description, $price, $category_id, $images);
+            $video = $_FILES['video']['name'];
+            move_uploaded_file($_FILES['video']['tmp_name'], './public/video/' . $video);
+            $ok = Product::addProduct($title, $description, $price, $category_id, $images, $video);
             if($ok) {
                 echo '<script>alert("Create new post success")
                 window.location.href = "index.php?controller=post&action=list";
@@ -77,7 +79,11 @@ class PostController extends BaseController {
                 if($images) {
                     move_uploaded_file($_FILES['images']['tmp_name'], './public/images/' . $images);
                 }
-                $ok = Product::editProduct($id, $title, $description, $price, $category_id, $images);
+                $video = !empty($_FILES['video']['name']) ? $_FILES['video']['name'] : null;
+                if($video) {
+                    move_uploaded_file($_FILES['video']['tmp_name'], './public/video/' . $video);
+                }
+                $ok = Product::editProduct($id, $title, $description, $price, $category_id, $images, $video);
                 if($ok) {
                     echo '<script>alert("Edit post success")
                     window.location.href = "index.php?controller=post&action=list";
