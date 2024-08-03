@@ -15,6 +15,8 @@
             </select>
             <label for="images">Images</label>
             <input type="file" name="images">
+            <label for="video">Video</label>
+            <input type="file" name="video">
             <button class="text-white text-bold" type="submit" name="add">Add</button>
         </form>
     </div>
