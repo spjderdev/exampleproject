@@ -1,12 +1,4 @@
-<?php 
-session_start();
 
-if($_SESSION['role'] !== 'admin') {
-    header('Location: index.php?controller=pages&action=error');
-    exit();
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +7,7 @@ if($_SESSION['role'] !== 'admin') {
     <title>Admin Dashboard</title>
 </head>
 <body>
-  
-    <?php include './components/sidebar.php'; ?>
+ 
+    <?php include './components/adminsidebar.php'; ?>
 </body>
 </html>
