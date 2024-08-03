@@ -32,6 +32,8 @@
             <label for="images">Images</label>
             <img class ="w-[100px] h-[100px]"src="./public/images/<?=$products['images']?>" alt="">
             <input type="file" name="images">
+            <video src="./public/video/<?= $products['video'] ?>"></video>
+            <input type="file" name='video'>
             <button class="text-white text-bold" type="submit" name="edit">Edit</button>
         </form>
     </div>
