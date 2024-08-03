@@ -61,10 +61,10 @@
 
 <style>
     .banner {
-        background: url('public/images/banner.jpg');
+        background: url('public/images/background.jpg');
         background-repeat: no-repeat;
         background-size: cover;
-        height: 100vh; /* Đảm bảo hình nền chiếm toàn bộ chiều cao của màn hình */
+        height: 100vh; 
     }
 
     .custom-input {
