@@ -5,7 +5,8 @@ $controllers = [
     'account' => ['signin', 'signup', 'register', 'login', 'logout'],
     'dashboard' => ['home', 'add'],
     'category' => ['list', 'edit', 'add', 'delete'],
-    'post' => ['list', 'add', 'delete', 'edit']
+    'post' => ['list', 'add', 'delete', 'edit'],
+    'topic' => ['show']
 ];
 
 $id = isset($_GET['id']) ? $_GET['id'] : null;
@@ -32,7 +33,7 @@ foreach($folders as $folder) {
                 }
             }
             if(method_exists($controller, $action)) {
-                if(($action === 'edit' || $action === 'delete') && $id !== null) {
+                if(($action === 'edit' || $action === 'delete' || $action === 'show') && $id !== null) {
                     $controller -> $action($id);
                 }
                 else {
